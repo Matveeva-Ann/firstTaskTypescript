@@ -7,10 +7,9 @@
 // Вивести значення змінної address з допомогою команди console.log().
 
 // let city: string;
-// city = '«Київ»';
-// city = '«Львів»';
-// let address: string;
-// address = city;
+// city = 'Київ';
+// city = 'Львів';
+// const address: string = city;
 // console.log(address)
 
 // Завдання 2.
@@ -19,8 +18,8 @@
 // Число непарне.
 // Число 0.
 
-// let data: any = prompt("введіть число");
-// let num: number = Number(data);
+// let data: unknown;
+// let num: number;
 
 // function checkNumb(num) {
 //   num === 0
@@ -29,11 +28,20 @@
 //     ? console.log(`ви ввели парне число`)
 //     : console.log(`ви ввели не парне число`);
 // }
-// data !== null && data !== "" && (num || num === 0) 
-//   ? checkNumb(num)
-//   : isNaN(num)
-//   ? console.log("введіть число")
-//   : console.log("введіть дані в поле");
+// do {
+//   data = prompt("введіть число");
+//   num = Number(data);
+//   if (data !== null && data !== "" && (num || num === 0)) {
+//     checkNumb(num);
+//     break;
+//   }
+//   if (isNaN(num)) {
+//     console.log("введіть число");
+//   } else {
+//     console.log("введіть дані в поле");
+//   }
+// } while (true);
+
 
 
 // Завдання 3.
@@ -45,8 +53,16 @@
 // max(5,-2, 30, 6) – має повернути 30
 
 // function maxNumb (...arg:Array<number>):number{
-//     arg.sort((a,b) => a-b);
-//     return arg[arg.length-1];
+//     return Math.max(...arg);
+// }
+// console.log(maxNumb(5,-2));
+// console.log(maxNumb(5, -2, 30, 6));
+
+// або
+
+// function maxNumb (...arg:Array<number>):number{
+//     arg.sort((a,b) => b-a);
+//     return arg[0];
 // }
 // console.log(maxNumb(5,-2));
 // console.log(maxNumb(5, -2, 30, 6));
@@ -72,20 +88,21 @@
 // Якщо в функцію нічого не передали - Будь ласка, введіть число!
 
 // function getSqrt(numb: number): void {
-//   if (numb > 0) {
-//     let sqrt = Math.sqrt(numb);
-//     console.log(` Квадратний корінь з ${numb} дорівнює ${sqrt}`);
-//   } else {
-//     console.log ("Введіть додатнє число");
+//   if (data === null || data === ""){
+//     console.log("Будь ласка, введіть число!");
+//   } else if ( isNaN(numb)){
+//     console.log("Повинно бути числове значення");
+//   }else{
+//     if (numb > 0) {
+//         let sqrt = Math.sqrt(numb);
+//         console.log(` Квадратний корінь з ${numb} дорівнює ${sqrt}`);
+//       } else {
+//         console.log ("Введіть додатнє число");
+//       }
 //   }
+  
 // }
-
 // const data: any = prompt("введіть число");
 // const numb: number = Number(data);
-
-// data === null || data === ""
-// ? console.log("Будь ласка, введіть число!")
-// : isNaN(numb)
-// ? console.log("Повинно бути числове значення")
-// : getSqrt(numb);
+// getSqrt(numb);
 
